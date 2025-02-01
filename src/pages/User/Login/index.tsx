@@ -2,11 +2,9 @@ import { Footer } from '@/components';
 import { listChartByPageUsingPost } from '@/services/zhbi/chartController';
 import { getLoginUserUsingGet, userLoginUsingPost } from '@/services/zhbi/userController';
 import {
-  AlipayCircleOutlined,
   LockOutlined,
-  TaobaoCircleOutlined,
   UserOutlined,
-  WeiboCircleOutlined,
+
 } from '@ant-design/icons';
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { Helmet, history, Link, useModel } from '@umijs/max';
@@ -68,11 +66,12 @@ const Login: React.FC = () => {
    */
   const fetchUserInfo = async () => {
     const userInfo = await getLoginUserUsingGet();
-    if (userInfo) {
+    // console.log("userInfo:"+userInfo);
+    if (userInfo.code === 0) {
       flushSync(() => {
         setInitialState((s) => ({
           ...s,
-          currentUser: userInfo,
+          currentUser: userInfo.data,
         }));
       });
     }
