@@ -12,19 +12,19 @@ const Footer: React.FC = () => {
         {
           key: '智能 BI',
           title: '智能 BI',
-          href: 'https://pro.ant.design',
+          href: 'https://github.com/tangfire/zh-Bi-frontend',
           blankTarget: true,
         },
         {
           key: 'github',
           title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          href: 'https://github.com/tangfire',
           blankTarget: true,
         },
         {
           key: '智能 BI',
           title: '智能 BI',
-          href: 'https://ant.design',
+          href: 'https://github.com/tangfire/zh-Bi-backend',
           blankTarget: true,
         },
       ]}

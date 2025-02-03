@@ -17,6 +17,21 @@ export async function addChartUsingPost(
   });
 }
 
+/** showChartConclusion POST /api/chart/conclusion */
+export async function showChartConclusionUsingPost(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.showChartConclusionUsingPOSTParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBiResponse_>('/api/chart/conclusion', {
+    method: 'POST',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
 /** deleteChart POST /api/chart/delete */
 export async function deleteChartUsingPost(
   body: API.DeleteRequest,
@@ -206,6 +221,21 @@ export async function listMyChartByPageUsingPost(
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageChart_>('/api/chart/my/list/page', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** reGenChartByAsyncMq POST /api/chart/regen */
+export async function reGenChartByAsyncMqUsingPost(
+  body: API.ChartRegenRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBiResponse_>('/api/chart/regen', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

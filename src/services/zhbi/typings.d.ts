@@ -131,6 +131,15 @@ declare namespace API {
     userId?: number;
   };
 
+  type ChartRegenRequest = {
+    chartData?: string;
+    chartType?: string;
+    goal?: string;
+    id?: number;
+    name?: string;
+    teamId?: number;
+  };
+
   type ChartUpdateRequest = {
     chartData?: string;
     chartType?: string;
@@ -294,6 +303,11 @@ declare namespace API {
     updateTime?: string;
     user?: UserVO;
     userId?: number;
+  };
+
+  type showChartConclusionUsingPOSTParams = {
+    /** chartId */
+    chartId?: number;
   };
 
   type uploadFileUsingPOSTParams = {
