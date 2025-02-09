@@ -108,6 +108,7 @@ export default defineConfig({
    * @doc https://umijs.org/docs/max/access
    */
   access: {},
+  exportStatic:{},
   /**
    * @name <head> 中额外的 script
    * @description 配置 <head> 中额外的 script

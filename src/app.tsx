@@ -19,6 +19,7 @@ export async function getInitialState(): Promise<{
   currentUser?: API.LoginUserVO;
 
 }> {
+  // console.log(process.env.NODE_ENV);
   const fetchUserInfo = async () => {
     try {
       const res = await getLoginUserUsingGet();
@@ -129,7 +130,11 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const request = {
-  baseURL: "http://localhost:8101",
+  // development
+  baseURL:  "http://localhost:8101",
+  // production
+  // baseURL: "http://121.37.16.92:82",
+  // baseURL: "http://121.37.16.92:8101",
   withCredentials: true,
   ...errorConfig,
 };

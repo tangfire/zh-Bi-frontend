@@ -145,7 +145,7 @@ const Register: React.FC = () => {
 
           <Form.Item label={null}>
             <Button type="primary" htmlType="submit">
-              Submit
+              注册
             </Button>
           </Form.Item>
 
